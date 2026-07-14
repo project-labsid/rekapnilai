@@ -45,3 +45,12 @@ class User extends Authenticatable
         ];
     }
 }
+protected $fillable = [
+    'name',
+    'username',
+    'email',
+    'phone',
+    'photo',
+    'is_active',
+    'password',
+];

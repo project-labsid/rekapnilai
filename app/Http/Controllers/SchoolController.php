@@ -63,3 +63,29 @@ class SchoolController extends Controller
         //
     }
 }
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+public function up(): void
+{
+    Schema::table('users', function (Blueprint $table) {
+        $table->string('username')->unique()->after('id');
+        $table->string('phone')->nullable()->after('email');
+        $table->string('photo')->nullable()->after('phone');
+        $table->boolean('is_active')->default(true)->after('photo');
+        $table->timestamp('last_login_at')->nullable()->after('remember_token');
+    });
+}
+
+public function down(): void
+{
+    Schema::table('users', function (Blueprint $table) {
+        $table->dropColumn([
+            'username',
+            'phone',
+            'photo',
+            'is_active',
+            'last_login_at',
+        ]);
+    });
+}

@@ -20,18 +20,15 @@ class StoreSchoolRequest extends FormRequest
      *
      * @return array<string, ValidationRule|array<mixed>|string>
      */
-   public function rules(): array
+public function rules(): array
 {
     return [
-
-        'name'=>'required|max:255',
-
-        'email'=>'nullable|email',
-
-        'logo'=>'nullable|image',
-
-        'favicon'=>'nullable|image',
-
+        'name' => 'required|max:255',
+        'username' => 'required|unique:users,username',
+        'email' => 'required|email|unique:users,email',
+        'phone' => 'nullable|max:20',
+        'password' => 'required|min:8|confirmed',
+        'role' => 'required',
     ];
 }
 }
