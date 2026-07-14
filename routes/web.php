@@ -40,3 +40,8 @@ Route::middleware(['auth'])->group(function () {
 Route::middleware(['auth', 'role:Super Admin'])->group(function () {
     Route::resource('users', UserController::class);
 });
+use App\Http\Controllers\TeacherController;
+
+Route::middleware(['auth', 'role:Super Admin|Admin'])->group(function () {
+    Route::resource('teachers', TeacherController::class);
+});

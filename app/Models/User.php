@@ -54,3 +54,7 @@ protected $fillable = [
     'is_active',
     'password',
 ];
+public function teacher()
+{
+    return $this->hasOne(Teacher::class);
+}
