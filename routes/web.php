@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 
 Route::get('/', function () {
-    return redirect()->route('dashboard');
+    return redirect()->route ('dashboard');
 });
 
 Route::middleware(['auth'])->group(function () {
@@ -44,4 +44,11 @@ use App\Http\Controllers\TeacherController;
 
 Route::middleware(['auth', 'role:Super Admin|Admin'])->group(function () {
     Route::resource('teachers', TeacherController::class);
+});
+use App\Http\Controllers\StudentController;
+
+Route::middleware(['auth'])->group(function () {
+
+    Route::resource('students', StudentController::class);
+
 });
