@@ -25,3 +25,10 @@ use App\Http\Controllers\SchoolController;
 Route::middleware(['auth'])->group(function () {
     Route::resource('schools', SchoolController::class);
 });
+use App\Http\Controllers\SchoolController;
+
+Route::middleware(['auth'])->group(function () {
+
+    Route::resource('schools', SchoolController::class);
+
+});

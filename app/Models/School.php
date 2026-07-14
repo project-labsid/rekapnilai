@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class School extends Model
 {
     protected $fillable = [
-
         'name',
         'npsn',
         'nss',
@@ -33,6 +32,5 @@ class School extends Model
         'established_year',
         'latitude',
         'longitude'
-
     ];
 }
