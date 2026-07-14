@@ -58,7 +58,7 @@ public function rules(): array
 
         'nis'=>'required|unique:students',
 
-        'nisn'=>'required|unique:students',
+        'nisn'=>'required|unique:ts',
 
         'name'=>'required',
 

@@ -29,3 +29,7 @@ class Teacher extends Model
         return $this->belongsTo(User::class);
     }
 }
+public function classRooms()
+{
+    return $this->hasMany(ClassRoom::class);
+}

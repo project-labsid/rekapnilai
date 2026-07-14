@@ -52,3 +52,20 @@ $table->foreign('parent_id')
       ->references('id')
       ->on('parents')
       ->nullOnDelete();
+      public function classroom()
+{
+    return $this->belongsTo(ClassRoom::class);
+}
+public function rules(): array
+{
+    return [
+
+        'name'=>'required',
+
+        'grade'=>'required',
+
+        'capacity'=>'required|numeric',
+
+    ];
+}
+Route::resource('classrooms', ClassRoomController::class);
