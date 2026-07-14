@@ -52,3 +52,10 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('students', StudentController::class);
 
 });
+use App\Http\Controllers\GuardianController;
+
+Route::middleware(['auth'])->group(function () {
+
+    Route::resource('guardians', GuardianController::class);
+
+});

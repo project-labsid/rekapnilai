@@ -46,9 +46,9 @@ class Student extends Model
         return $this->belongsTo(ClassRoom::class);
     }
 
-    public function parent()
+    public function Guardian()
     {
-        return $this->belongsTo(ParentModel::class,'parent_id');
+        return $this->belongsTo(ParentModel::class,'Guardian_id');
     }
 
 }
@@ -71,4 +71,8 @@ public function rules(): array
         'entry_year'=>'required',
 
     ];
+}
+public function guardian()
+{
+    return $this->belongsTo(Guardian::class);
 }
